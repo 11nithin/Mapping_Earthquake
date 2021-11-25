@@ -7,6 +7,7 @@ The purpose of this project is to visually show the differences between the magn
 ## Resources
  
 JavaScript and D3.js library - To retrieve the coordinates and magnitudes of the earthquakes from the GeoJSON data.
+
 Leaflet library -  To plot the data on a Mapbox map through an API request and create interactivity for the earthquake data.
 
 
