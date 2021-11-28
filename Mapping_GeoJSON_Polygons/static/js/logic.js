@@ -45,6 +45,7 @@ d3.json(torontoHoods).then(function(data){
     console.log(data);
     L.geoJSON(data,{
         color: "#ffffa2",
+        weight: 1,
         onEachFeature: function(feature,layer){
             layer.bindPopup("<h2>Area:" + feature.properties.AREA_NAME+ "</h2><hr><h3>AreaCD:" + feature.properties.AREA_S_CD +" </h3>" );
         }
