@@ -17,14 +17,18 @@ streets.addTo(map);
 // Coordinates for each point to be used in the line.
 let torontoData = "https://raw.githubusercontent.com/11nithin/Mapping_Earthquake/Mapping_GeoJSON_Linestrings/torontoRoutes.json"
 
-
+// Create a style for the lines.
+let myStyle = {
+    color: "#ffffa1",
+    weight: 2
+}
  // Grabbing our GeoJSON data.
 // Grabbing our GeoJSON data.
 d3.json(torontoData).then(function(data) {
     console.log(data);
   // Creating a GeoJSON layer with the retrieved data.
   L.geoJSON(data,{
-      color: "yellow"
+     style:  myStyle
   }).bindPopup("<h2>Airline:" + data.features[0].properties.airline+ "</h2><hr><h3>Airline code:" + data.features[0].properties.airline_id +" </h3>"  ).addTo(map);
 });
 
