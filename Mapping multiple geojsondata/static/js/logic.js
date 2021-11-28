@@ -15,14 +15,15 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 streets.addTo(map);
 
 // Coordinates for each point to be used in the line.
-let airportData = "https://github.com/11nithin/Mapping_Earthquake/blob/main/majorAirports.json"
+let airportData = "https://raw.githubusercontent.com/11nithin/Mapping_Earthquake/main/majorAirports.json"
 
 
  // Grabbing our GeoJSON data.
 d3.json(airportData).then(function(data) {
-  console.log(data);
+  // console.log(data);
+   console.log(data.features[0].properties.city);
 // Creating a GeoJSON layer with the retrieved data.
-L.geoJSON(data).addTo(map);
+L.geoJSON(data).bindPopup("<h2>City:" + data.features[0].properties.city+ "</h2><hr><h3>Airport code:" + data.features[0].properties.faa +" </h3>"  ).addTo(map);
 });
 
 
