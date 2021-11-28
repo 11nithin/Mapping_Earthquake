@@ -2,7 +2,7 @@
 console.log("working");
 
 // Create the map object with a center and zoom level.
-let map = L.map('mapid').setView([34.0522, -118.2437], 14);
+let map = L.map('mapid').setView([34.0522, -118.2437], 4);
 
 // Loop through the cities array and create one marker for each city.
 cityData.forEach(function(city) {
