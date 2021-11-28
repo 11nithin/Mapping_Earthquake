@@ -39,17 +39,12 @@ L.control.layers(baseMaps).addTo(map);
 let torontoHoods = "https://raw.githubusercontent.com/11nithin/Mapping_Earthquake/Mapping_GeoJSON_Polygons/torontoNeighborhoods.json"
 
 
-// Creating a GeoJSON layer with the retrieved data.
-L.geoJSON(data, {
-
-    // We turn each feature into a circleMarker on the map.
-    
-    pointToLayer: function(feature, latlng) {
-                console.log(data);
-                return L.circleMarker(latlng);
-            },
-        }).addTo(map);
-
+ // Grabbing our GeoJSON data.
+// Retrieve the earthquake GeoJSON data.
+d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson").then(function(data) {
+  // Creating a GeoJSON layer with the retrieved data.
+  L.geoJSON(data).addTo(map);
+});
 
 
 
